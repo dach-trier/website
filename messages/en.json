@@ -1,3 +1,7 @@
 {
-    "translation": "HELLO WORLD"
+    "auth": {
+        "signin": {
+            "button": "Sign in with {provider}"
+        }
+    }
 }

@@ -1,1 +1,7 @@
-{}
+{
+    "auth": {
+        "signin": {
+            "button": "Mit {provider} anmelden"
+        }
+    }
+}
