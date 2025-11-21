@@ -2,7 +2,6 @@ import "./global.css";
 
 import { ReactNode } from "react";
 import { cookies } from "next/headers";
-import { Header } from "@/components/header";
 import { TranslationProvider } from "@/i18n/client";
 import { getLocale, getTranslations } from "@/i18n/server";
 
@@ -25,7 +24,6 @@ export default async function RootLayout({ children }: Props) {
                     locale={locale}
                     translations={translations}
                 >
-                    <Header />
                     {children}
                 </TranslationProvider>
             </body>
