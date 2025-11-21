@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import { getTranslations } from "@/i18n/server";
 import { getLogoPath } from "@/logo";
 
+import LanguageButton from "@/components/language-button";
+
 export async function generateMetadata(): Promise<Metadata> {
     const translations = (await getTranslations())["maintenance"];
     return { title: translations["title"] };
@@ -12,6 +14,10 @@ export default async function MaintenancePage() {
 
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center gap-5">
+            <div className="absolute top-0 flex h-12 py-2">
+                <LanguageButton alignment="bottom-center" />
+            </div>
+
             <img width={100} src={getLogoPath("dach")} alt="logo" />
 
             <h2 className="text-2xl font-bold">{translations["title"]}</h2>
