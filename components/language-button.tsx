@@ -5,10 +5,12 @@ import { useTranslationContext } from "@/i18n/client";
 import { postLocale } from "@/i18n/cookie";
 
 type LanguageButtonProps = {
+    className?: string;
     alignment?: "bottom-left" | "bottom-center" | "bottom-right";
 };
 
 export default function LanguageButton(props: LanguageButtonProps) {
+    const className = props.className ?? "";
     const alignment = props.alignment ?? "bottom-left";
 
     const translationContext = useTranslationContext();
@@ -52,13 +54,13 @@ export default function LanguageButton(props: LanguageButtonProps) {
         <div className="relative">
             <button
                 ref={buttonRef}
-                className="
-                    w-full h-full
-                    px-2 rounded-sm
-                    text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800
-                    transition-colors
-                    cursor-pointer
-                "
+                className={[
+                    className,
+                    "px-2 rounded-sm",
+                    "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800",
+                    "transition-colors",
+                    "cursor-pointer",
+                ].join(" ")}
                 onClick={() => setVisible(!visible)}
             >
                 <svg
@@ -67,7 +69,6 @@ export default function LanguageButton(props: LanguageButtonProps) {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="size-5"
                 >
                     <path
                         strokeLinecap="round"
@@ -82,8 +83,9 @@ export default function LanguageButton(props: LanguageButtonProps) {
                     ref={dropdownRef}
                     className={[
                         "absolute mt-2",
-                        "w-[225px]",
+                        "w-[200px]",
                         "rounded-sm",
+                        "flex flex-col",
                         "outline-1 outline-gray-200",
                         "shadow-lg",
 
@@ -170,7 +172,9 @@ function Option({
             onMouseOver={onMouseEnter}
             onMouseLeave={onMouseLeave}
         >
-            <span>{translations[which]}</span>
+            <span className="text-[13pt] font-medium">
+                {translations[which]}
+            </span>
         </button>
     );
 }

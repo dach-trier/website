@@ -1,2 +1,6 @@
 @import "normalize.css";
 @import "tailwindcss";
+
+@theme {
+    --breakpoint-xs: 300px;
+}

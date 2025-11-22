@@ -9,14 +9,14 @@ export function Header() {
             className="
                 mx-auto py-2
                 w-[80%] max-md:w-[95%]
-                flex justify-between
+                flex justify-between items-center
             "
         >
             <Link href="/">
-                <img width={40} src={getLogoPath("dach")} alt="logo" />
+                <img className="w-15" src={getLogoPath("dach")} alt="logo" />
             </Link>
 
-            <LanguageButton />
+            <LanguageButton className="w-11 h-11" />
         </div>
     );
 }

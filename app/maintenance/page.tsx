@@ -15,7 +15,10 @@ export default async function MaintenancePage() {
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center gap-5 text-nowrap text-center">
             <div className="absolute top-0 flex h-12 py-2">
-                <LanguageButton alignment="bottom-center" />
+                <LanguageButton
+                    className="w-11 h-11"
+                    alignment="bottom-center"
+                />
             </div>
 
             <img
