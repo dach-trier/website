@@ -4,3 +4,7 @@
 @theme {
     --breakpoint-xs: 300px;
 }
+
+button {
+    display: block;
+}
