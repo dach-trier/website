@@ -51,7 +51,7 @@ export default function LanguageButton(props: LanguageButtonProps) {
     });
 
     return (
-        <div className="relative">
+        <>
             <button
                 ref={buttonRef}
                 className={[
@@ -90,6 +90,7 @@ export default function LanguageButton(props: LanguageButtonProps) {
                         "shadow-lg",
 
                         // select alignment
+                        "top-full",
                         (() => {
                             switch (alignment) {
                                 case "bottom-left":
@@ -135,7 +136,7 @@ export default function LanguageButton(props: LanguageButtonProps) {
                     />
                 </div>
             )}
-        </div>
+        </>
     );
 }
 
