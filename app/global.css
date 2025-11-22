@@ -2,12 +2,9 @@
 
 @theme {
     --breakpoint-xs: 300px;
+    --breakpoint-s: 400px;
 }
 
 button {
-    display: block;
-}
-
-a {
     display: block;
 }
