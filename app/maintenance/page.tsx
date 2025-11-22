@@ -13,18 +13,25 @@ export default async function MaintenancePage() {
     const translations = (await getTranslations())["maintenance"];
 
     return (
-        <div className="w-screen h-screen flex flex-col justify-center items-center gap-5">
+        <div className="w-screen h-screen flex flex-col justify-center items-center gap-5 text-nowrap text-center">
             <div className="absolute top-0 flex h-12 py-2">
                 <LanguageButton alignment="bottom-center" />
             </div>
 
-            <img width={100} src={getLogoPath("dach")} alt="logo" />
+            <img
+                className="w-50 max-xs:w-40"
+                src={getLogoPath("dach")}
+                alt="logo"
+            />
+            <h2 className="mt-2 text-4xl max-xs:text-3xl font-bold">
+                {translations["title"]}
+            </h2>
 
-            <h2 className="text-2xl font-bold">{translations["title"]}</h2>
+            <div />
 
-            <p>info@dach-trier.com</p>
+            <p className="text-lg">info@dach-trier.com</p>
 
-            <div className="flex gap-5 text-blue-500">
+            <div className="flex gap-5 text-lg text-blue-500">
                 <a href="https://instagram.com/dach_ukr_de" target="_blank">
                     Instagram
                 </a>
