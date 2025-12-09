@@ -17,7 +17,7 @@ export function Header() {
                 <img className="w-15" src={getLogoPath("dach")} alt="logo" />
             </Link>
 
-            <div className="flex items-center gap-5 relative">
+            <div className="flex items-center gap-5">
                 <>
                     <DonationButton
                         className="w-11 h-11 s:hidden"
@@ -30,7 +30,7 @@ export function Header() {
                     />
                 </>
 
-                <LanguageButton className="w-11 h-11" />
+                <LanguageButton size={11} alignment="bottom-left" />
             </div>
         </div>
     );

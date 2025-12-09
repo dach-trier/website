@@ -15,14 +15,15 @@ export default async function MaintenancePage() {
 
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center gap-5 text-nowrap text-center">
-            <div className="absolute top-0 flex h-12 my-2 gap-5">
-                <DonationButton className="h-11 pl-2 pr-3" variant="wide" />
+            <>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 py-2">
+                    <DonationButton className="h-11 pl-2 pr-3" variant="wide" />
+                </div>
 
-                <LanguageButton
-                    className="w-11 h-11"
-                    alignment="bottom-center"
-                />
-            </div>
+                <div className="absolute top-0 right-0 py-2 px-5">
+                    <LanguageButton size={11} alignment="bottom-left" />
+                </div>
+            </>
 
             <img
                 className="w-50 max-xs:w-40"

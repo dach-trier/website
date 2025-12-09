@@ -5,12 +5,13 @@ import { useTranslationContext } from "@/i18n/client";
 import { postLocale } from "@/i18n/cookie";
 
 type LanguageButtonProps = {
-    className?: string;
+    size?: number;
     alignment?: "bottom-left" | "bottom-center" | "bottom-right";
 };
 
 export default function LanguageButton(props: LanguageButtonProps) {
-    const className = props.className ?? "";
+    const size = props.size ?? 0;
+    const pixels = size * 4;
     const alignment = props.alignment ?? "bottom-left";
 
     const translationContext = useTranslationContext();
@@ -51,16 +52,16 @@ export default function LanguageButton(props: LanguageButtonProps) {
     });
 
     return (
-        <>
+        <div className="relative">
             <button
                 ref={buttonRef}
-                className={[
-                    className,
-                    "px-2 rounded-sm",
-                    "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800",
-                    "transition-colors",
-                    "cursor-pointer",
-                ].join(" ")}
+                className="
+                    px-2 rounded-sm
+                    text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800
+                    transition-colors
+                    cursor-pointer
+                "
+                style={{ width: `${pixels}px`, height: `${pixels}px` }}
                 onClick={() => setVisible(!visible)}
             >
                 <svg
@@ -136,7 +137,7 @@ export default function LanguageButton(props: LanguageButtonProps) {
                     />
                 </div>
             )}
-        </>
+        </div>
     );
 }
 
