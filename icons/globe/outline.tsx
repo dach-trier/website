@@ -1,16 +1,21 @@
 type Props = {
     size?: number | string;
     strokeWidth?: number;
+    color?: string;
 };
 
-export default function Globe({ size, strokeWidth = 1.5 }: Props) {
+export default function Globe({
+    size,
+    strokeWidth = 1.5,
+    color = "currentColor",
+}: Props) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={strokeWidth}
-            stroke="currentColor"
+            stroke={color}
             style={{ width: size, height: size }}
         >
             <path
