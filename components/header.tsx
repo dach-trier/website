@@ -2,7 +2,7 @@ import { getLogoPath } from "@/logo";
 
 import Link from "next/link";
 import LanguageButton from "@/components/language-button";
-import DonationButton from "./donation-button";
+import DonationButton from "@/components/donation-button/solid";
 
 export function Header() {
     return (
@@ -18,17 +18,7 @@ export function Header() {
             </Link>
 
             <div className="flex items-center gap-5">
-                <>
-                    <DonationButton
-                        className="w-11 h-11 s:hidden"
-                        variant="compact"
-                    />
-
-                    <DonationButton
-                        className="h-11 pl-2 pr-3 max-s:hidden"
-                        variant="wide"
-                    />
-                </>
+                <DonationButton size={11} showLabel />
 
                 <LanguageButton size={11} alignment="bottom-left" />
             </div>
