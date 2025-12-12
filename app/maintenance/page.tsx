@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { getTranslations } from "@/i18n/server";
 import { getLogoPath } from "@/logo";
 
-import LanguageButton from "@/components/language-button";
+import LanguageButton from "@/components/language-button/solid";
 import DonationButton from "@/components/donation-button/solid";
 
 export async function generateMetadata(): Promise<Metadata> {

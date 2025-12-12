@@ -1,7 +1,7 @@
 import { getLogoPath } from "@/logo";
 
 import Link from "next/link";
-import LanguageButton from "@/components/language-button";
+import LanguageButton from "@/components/language-button/solid";
 import DonationButton from "@/components/donation-button/solid";
 
 export function Header() {
