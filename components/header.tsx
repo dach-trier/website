@@ -1,6 +1,5 @@
-import { getLogoPath } from "@/logo";
-
 import Link from "next/link";
+import DachLogo from "@/logos/dach";
 import LanguageButton from "@/components/language-button/solid";
 import DonationButton from "@/components/donation-button/solid";
 
@@ -14,7 +13,7 @@ export function Header() {
             "
         >
             <Link href="/">
-                <img className="w-15" src={getLogoPath("dach")} alt="logo" />
+                <DachLogo size={60} />
             </Link>
 
             <div className="flex items-center gap-5">

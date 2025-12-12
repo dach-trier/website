@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { getTranslations } from "@/i18n/server";
-import { getLogoPath } from "@/logo";
 
+import DachLogo from "@/logos/dach";
 import LanguageButton from "@/components/language-button/solid";
 import DonationButton from "@/components/donation-button/solid";
 
@@ -25,11 +25,8 @@ export default async function MaintenancePage() {
                 </div>
             </>
 
-            <img
-                className="w-50 max-xs:w-40"
-                src={getLogoPath("dach")}
-                alt="logo"
-            />
+            <DachLogo size={200} />
+
             <h2 className="mt-2 text-4xl max-xs:text-3xl font-bold">
                 {translations["title"]}
             </h2>
