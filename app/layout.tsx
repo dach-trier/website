@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import { cookies } from "next/headers";
 import { TranslationProvider } from "@/i18n/client";
 import { ViewportObserver } from "@/observers/viewport";
+import { ScrollObserver } from "@/observers/scroll";
 import { getLocale, getTranslations } from "@/i18n/server";
 
 import i18nConfig from "@/i18n.config";
@@ -25,7 +26,9 @@ export default async function RootLayout({ children }: Props) {
                     locale={locale}
                     translations={translations}
                 >
-                    <ViewportObserver>{children}</ViewportObserver>
+                    <ViewportObserver>
+                        <ScrollObserver>{children}</ScrollObserver>
+                    </ViewportObserver>
                 </TranslationProvider>
             </body>
         </html>
