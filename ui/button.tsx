@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState, useMemo } from "react";
+import { ReactNode, useState, useMemo, MouseEvent } from "react";
 
 import Shade from "@/ui/shade";
 import Color from "@/ui/color";
@@ -10,14 +10,22 @@ import blend from "@/ui/blend";
 type ButtonProps = {
     children: ReactNode;
 
+    width?: number | string;
+    height?: number | string;
+
     foregroundColor?: Color;
     foregroundShade?: Shade;
     backgroundColor?: Color;
     backgroundShade?: Shade;
+
+    onClick?(event: MouseEvent): void;
 };
 
 export default function Button({
     children,
+    width,
+    height,
+    onClick,
     foregroundColor = "black",
     foregroundShade = "normal",
     backgroundColor = "white",
@@ -47,7 +55,13 @@ export default function Button({
             onMouseEnter={() => setState("hot")}
             onMouseDown={() => setState("active")}
             onMouseUp={() => setState("hot")}
-            style={{ color: foreground, backgroundColor: background }}
+            onClick={onClick}
+            style={{
+                width: width,
+                height: height,
+                color: foreground,
+                backgroundColor: background,
+            }}
         >
             {children}
         </button>
