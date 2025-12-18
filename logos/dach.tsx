@@ -1,7 +1,8 @@
 type Props = {
-    size: number | string;
+    width?: string | number;
+    height?: string | number;
 };
 
-export default function DachLogo({ size }: Props) {
-    return <img src="/dach.svg" alt="dach logo" width={size} />;
+export default function DachLogo({ width, height }: Props) {
+    return <img src="/dach.svg" alt="dach logo" style={{ width, height }} />;
 }

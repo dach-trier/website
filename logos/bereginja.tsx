@@ -1,7 +1,14 @@
 type Props = {
-    size: number | string;
+    width?: string | number;
+    height?: string | number;
 };
 
-export default function BereginjaLogo({ size }: Props) {
-    return <img src="/bereginja.svg" alt="bereginja logo" width={size} />;
+export default function BereginjaLogo({ width, height }: Props) {
+    return (
+        <img
+            src="/bereginja.svg"
+            alt="bereginja logo"
+            style={{ width, height }}
+        />
+    );
 }

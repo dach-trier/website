@@ -1,7 +1,8 @@
 type Props = {
-    size: number | string;
+    width?: number | string;
+    height?: number | string;
 };
 
-export default function CampLogo({ size }: Props) {
-    return <img src="/camp.svg" alt="camp logo" width={size} />;
+export default function CampLogo({ width, height }: Props) {
+    return <img src="/camp.svg" alt="camp logo" style={{ width, height }} />;
 }

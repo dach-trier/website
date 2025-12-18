@@ -13,7 +13,7 @@ export function Header() {
             "
         >
             <Link href="/">
-                <DachLogo size={60} />
+                <DachLogo width={60} />
             </Link>
 
             <div className="flex items-center gap-5">

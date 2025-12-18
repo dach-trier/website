@@ -25,7 +25,7 @@ export default async function MaintenancePage() {
                 </div>
             </>
 
-            <DachLogo size={200} />
+            <DachLogo width={200} />
 
             <h2 className="mt-2 text-4xl max-xs:text-3xl font-bold">
                 {translations["title"]}
