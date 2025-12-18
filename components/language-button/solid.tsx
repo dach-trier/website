@@ -5,7 +5,7 @@ import { useTranslationContext } from "@/i18n/client";
 import { postLocale } from "@/i18n/cookie";
 import { AnimatePresence, motion } from "motion/react";
 
-import Globe from "@/icons/globe/outline";
+import Globe from "@/icons/globe";
 
 type LanguageButtonProps = {
     size?: number;
@@ -67,7 +67,7 @@ export default function LanguageButton(props: LanguageButtonProps) {
                 style={{ width: `${pixels}px`, height: `${pixels}px` }}
                 onClick={() => setVisible(!visible)}
             >
-                <Globe />
+                <Globe variant="outline" />
             </button>
 
             <AnimatePresence>

@@ -1,22 +1,25 @@
-type Props = {
-    size?: number | string;
+type OutlineProps = {
+    width?: string | number;
+    height?: string | number;
+    stroke?: string;
     strokeWidth?: number;
-    color?: string;
 };
 
-export default function Globe({
-    size,
+function Outline({
+    width,
+    height,
+    stroke = "currentColor",
     strokeWidth = 1.5,
-    color = "currentColor",
-}: Props) {
+}: OutlineProps) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={strokeWidth}
-            stroke={color}
-            style={{ width: size, height: size }}
+            stroke={stroke}
+            width={width}
+            height={height}
         >
             <path
                 strokeLinecap="round"
@@ -25,4 +28,13 @@ export default function Globe({
             />
         </svg>
     );
+}
+
+type Props = { variant: "outline" } & OutlineProps;
+
+export default function Globe({ variant, ...props }: Props) {
+    switch (variant) {
+        case "outline":
+            return <Outline {...props} />;
+    }
 }
