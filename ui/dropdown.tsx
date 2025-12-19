@@ -191,7 +191,7 @@ const Dropdown = React.forwardRef<DropdownRef, Props>((props, ref) => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.9 }}
-                        transition={{ type: "tween", duration: 0.1 }}
+                        transition={{ type: "tween", duration: 0.15 }}
                         className="absolute z-1000"
                     >
                         {children[1]}
