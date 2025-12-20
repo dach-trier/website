@@ -9,7 +9,6 @@ import Menu from "@/components/language-dropdown/menu";
 import Item from "@/components/language-dropdown/item";
 
 type Props = {
-    variant: "solid" | "outline";
     width?: number | string;
     height?: number | string;
     x?: "left" | "center" | "right";
@@ -18,7 +17,6 @@ type Props = {
 };
 
 export default function LanguageDropdown({
-    variant,
     width,
     height,
     x,
@@ -33,7 +31,7 @@ export default function LanguageDropdown({
             spacing={spacing}
             {...{ x, y, width, height }}
         >
-            <Trigger variant={variant} width="100%" height="100%" />
+            <Trigger width="100%" height="100%" />
             <Menu onSelection={() => dropdownRef.current?.close()}>
                 <Item locale="en" />
                 <Item locale="de" />
