@@ -37,13 +37,7 @@ export interface DropdownRef {
 }
 
 const Dropdown = React.forwardRef<DropdownRef, Props>((props, ref) => {
-    const {
-        width = "fit",
-        height = "fit",
-        x = "center",
-        y = "bottom",
-        spacing = 5,
-    } = props;
+    const { width, height, x = "center", y = "bottom", spacing = 5 } = props;
 
     const children = React.Children.toArray(props.children).map((child) => {
         if (React.isValidElement(child)) {
