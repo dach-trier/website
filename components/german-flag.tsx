@@ -3,7 +3,7 @@ type Props = {
     height?: string | number;
 };
 
-export default function Germany({ width, height }: Props) {
+export default function GermanFlag({ width, height }: Props) {
     return (
         <img
             src="/germany.svg"

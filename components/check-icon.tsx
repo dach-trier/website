@@ -5,7 +5,7 @@ type Props = {
     strokeWidth?: number;
 };
 
-export default function Check({
+export default function CheckIcon({
     width,
     height,
     stroke = "currentColor",

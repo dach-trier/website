@@ -54,7 +54,7 @@ type Props =
     | ({ variant: "outline" } & OutlineProps)
     | ({ variant: "solid" } & SolidProps);
 
-export default function Heart({ variant, ...props }: Props) {
+export default function HeartIcon({ variant, ...props }: Props) {
     switch (variant) {
         case "outline":
             return <Outline {...props} />;

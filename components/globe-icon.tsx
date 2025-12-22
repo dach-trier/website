@@ -54,7 +54,7 @@ type Props =
     | ({ variant: "outline" } & OutlineProps)
     | ({ variant: "solid" } & SolidProps);
 
-export default function Globe(props: Props) {
+export default function GlobeIcon(props: Props) {
     switch (props.variant) {
         case "outline":
             return <Outline {...props} />;

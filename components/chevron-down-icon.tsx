@@ -5,7 +5,7 @@ type Props = {
     strokeWidth?: number;
 };
 
-export default function ChevronDown({
+export default function ChevronDownIcon({
     width,
     height,
     stroke = "currentColor",
