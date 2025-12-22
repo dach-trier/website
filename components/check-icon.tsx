@@ -1,25 +1,21 @@
-type Props = {
-    width?: number | string;
-    height?: number | string;
-    stroke?: string;
-    strokeWidth?: number;
-};
+import IconProps from "@/types/icon-props";
 
-export default function CheckIcon({
-    width,
-    height,
-    stroke = "currentColor",
-    strokeWidth = 1.5,
-}: Props) {
+const CheckIcon = (props: IconProps) => {
+    const {
+        fill = "none",
+        stroke = "currentColor",
+        strokeWidth = 1.5,
+        ...rest
+    } = props;
+
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
             viewBox="0 0 24 24"
+            fill={fill}
             stroke={stroke}
             strokeWidth={strokeWidth}
-            width={width}
-            height={height}
+            {...rest}
         >
             <path
                 strokeLinecap="round"
@@ -28,4 +24,6 @@ export default function CheckIcon({
             />
         </svg>
     );
-}
+};
+
+export default CheckIcon;

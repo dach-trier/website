@@ -1,25 +1,21 @@
-type Props = {
-    width?: string | number;
-    height?: string | number;
-    stroke?: string;
-    strokeWidth?: number;
-};
+import IconProps from "@/types/icon-props";
 
-export default function ChevronDownIcon({
-    width,
-    height,
-    stroke = "currentColor",
-    strokeWidth = 1.5,
-}: Props) {
+const ChevronDownIcon = (props: IconProps) => {
+    const {
+        fill = "none",
+        stroke = "currentColor",
+        strokeWidth = 1.5,
+        ...rest
+    } = props;
+
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
             viewBox="0 0 24 24"
-            strokeWidth={strokeWidth}
+            fill={fill}
             stroke={stroke}
-            width={width}
-            height={height}
+            strokeWidth={strokeWidth}
+            {...rest}
         >
             <path
                 strokeLinecap="round"
@@ -28,4 +24,6 @@ export default function ChevronDownIcon({
             />
         </svg>
     );
-}
+};
+
+export default ChevronDownIcon;
