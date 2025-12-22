@@ -1,14 +1,3 @@
-type Props = {
-    width?: number | string;
-    height?: number | string;
-};
+import UkrainianFlag from "@/public/ukraine.svg";
 
-export default function UkrainianFlag({ width, height }: Props) {
-    return (
-        <img
-            src="/ukraine.svg"
-            alt="flag of ukraine"
-            style={{ width, height }}
-        />
-    );
-}
+export default UkrainianFlag;

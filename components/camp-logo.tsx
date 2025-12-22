@@ -1,8 +1,3 @@
-type Props = {
-    width?: number | string;
-    height?: number | string;
-};
+import CampLogo from "@/public/bereginja.svg";
 
-export default function CampLogo({ width, height }: Props) {
-    return <img src="/camp.svg" alt="camp logo" style={{ width, height }} />;
-}
+export default CampLogo;

@@ -1,8 +1,3 @@
-type Props = {
-    width?: string | number;
-    height?: string | number;
-};
+import DachLogo from "@/public/dach.svg";
 
-export default function DachLogo({ width, height }: Props) {
-    return <img src="/dach.svg" alt="dach logo" style={{ width, height }} />;
-}
+export default DachLogo;
