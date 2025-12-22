@@ -2,8 +2,7 @@
 
 import { useTranslationContext } from "@/i18n/client";
 
-import Button from "@/ui/button";
-import Heart from "@/icons/heart";
+import Heart from "@/components/heart-icon";
 
 type SolidProps = {
     width?: number | string;
@@ -27,11 +26,9 @@ function Solid({
         translationContext.translations["components"]["donation-button"];
 
     return (
-        <Button
-            width={width}
-            height={height}
-            backgroundColor="red"
-            radius={4}
+        <button
+            style={{ width, height }}
+            className="bg-red-500 rounded-sm"
             onClick={() => window.open("https://paypal.me/dachtrier", "_blank")}
         >
             <div className="w-full h-full flex gap-2 py-2 pl-2 pr-3 items-center">
@@ -49,7 +46,7 @@ function Solid({
                     {translations["donate"]}
                 </span>
             </div>
-        </Button>
+        </button>
     );
 }
 

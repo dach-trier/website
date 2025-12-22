@@ -1,6 +1,6 @@
 import React, { MouseEvent } from "react";
 
-import Globe from "@/icons/globe";
+import Globe from "@/components/globe-icon";
 
 type Props = {
     width?: number | string;

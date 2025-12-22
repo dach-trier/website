@@ -1,7 +1,7 @@
 import Link from "next/link";
-import DachLogo from "@/logos/dach";
+import DachLogo from "@/components/dach-logo";
 import LanguageDropdown from "@/components/language-dropdown";
-import DonationButton from "@/components/donation-button/solid";
+import DonationButton from "@/components/donation-button";
 
 export function Header() {
     return (
@@ -13,12 +13,12 @@ export function Header() {
             "
         >
             <Link href="/">
-                <DachLogo width={60} />
+                <DachLogo width={60} height={60} />
             </Link>
 
             <div className="flex items-center gap-5">
-                <DonationButton size={11} showLabel />
-                <LanguageDropdown variant="solid" x="right" width={44} />
+                <DonationButton variant="solid" height={44} />
+                <LanguageDropdown x="right" width={44} />
             </div>
         </div>
     );

@@ -2,13 +2,12 @@
 
 import { MouseEvent } from "react";
 import { useTranslationContext } from "@/i18n/client";
-
-import Button from "@/ui/button";
-import Check from "@/icons/check";
-import Ukraine from "@/icons/ukraine";
-import Germany from "@/icons/germany";
-import GreatBritain from "@/icons/great-britain";
 import { postLocale } from "@/i18n/cookie";
+
+import Check from "@/components/check-icon";
+import Ukraine from "@/components/ukrainian-flag";
+import Germany from "@/components/german-flag";
+import GreatBritain from "@/components/british-flag";
 
 type IconProps = {
     locale: "en" | "uk" | "de";
@@ -44,10 +43,8 @@ export default function LanguageMenuItem({ locale, onClick }: Props) {
     const selectedLocale = translationContext.locale;
 
     return (
-        <Button
-            width="100%"
-            padding="7.5px 16px"
-            backgroundColor="white"
+        <button
+            className="w-full p-[7.5px 16px] bg-white cursor-pointer"
             onClick={async (event) => {
                 onClick?.(event);
                 await postLocale(locale);
@@ -57,13 +54,15 @@ export default function LanguageMenuItem({ locale, onClick }: Props) {
             <div className="flex! items-center justify-between gap-3">
                 <div className="flex items-center gap-4">
                     <Icon locale={locale} size={24} />
-                    <span className="text-[15px]">{localeLegendMap[locale]}</span>
+                    <span className="text-[15px]">
+                        {localeLegendMap[locale]}
+                    </span>
                 </div>
 
                 {selectedLocale === locale && (
                     <Check strokeWidth={1.5} height={18} />
                 )}
             </div>
-        </Button>
+        </button>
     );
 }

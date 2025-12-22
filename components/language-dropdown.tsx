@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-import Dropdown, { DropdownRef } from "@/ui/dropdown";
+import Dropdown, { DropdownRef } from "@/components/dropdown";
 
 import Trigger from "@/components/language-dropdown/trigger";
 import Menu from "@/components/language-dropdown/menu";
