@@ -1,0 +1,105 @@
+.container {
+    margin-top: 50px;
+    padding: 0 var(--content-padding);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;
+}
+
+.container > :nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+/**
+ * About
+ */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about > h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.about > p {
+    font-size: 17px;
+}
+
+/**
+ * Buttons
+ */
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.buttons > button {
+    width: 120px;
+    height: 40px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (min-width: 360px) {
+    .buttons > button {
+        width: 130px;
+        height: 45px;
+    }
+}
+
+.join-button {
+    color: white;
+    background: var(--color-blue-500);
+}
+
+.support-button {
+    color: white;
+    background: var(--color-red-500);
+    padding-right: 5px;
+}
+
+/**
+ * Map
+ */
+
+.map {
+    width: 100vw;
+    margin: 0 calc(-1 * var(--content-padding));
+}
+
+@media (min-width: 560px) {
+    .map {
+        width: 75vw;
+        margin: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .map {
+        min-width: 500px;
+        width: 500px;
+        margin: 0;
+    }
+}

@@ -1,8 +1,25 @@
 @import "tailwindcss";
 
-@theme {
-    --breakpoint-xs: 300px;
-    --breakpoint-s: 400px;
+:root {
+    --content-padding: 25px;
+}
+
+@media (min-width: 560) {
+    :root {
+        --content-padding: 40px;
+    }
+}
+
+@media (min-width: 1280) {
+    :root {
+        --content-padding: 10%;
+    }
+}
+
+@media (min-width: 1680) {
+    :root {
+        --content-padding: 20%;
+    }
 }
 
 button {
