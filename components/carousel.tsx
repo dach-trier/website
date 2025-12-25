@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode, useEffect, useRef } from "react";
+import React, { ReactNode, useRef } from "react";
 import mergeRefs from "@/utils/merge-refs";
 
 type Props = {
@@ -47,12 +47,12 @@ const Carousel = (props: Props) => {
         const blockSize = lastRect.right - firstRect.left + (gap ?? 0);
 
         if (trackRect.left >= containerRect.left) {
-            scrollRight(blockSize);
+            containerRef.current!.scrollLeft += blockSize;
             return;
         }
 
         if (trackRect.right <= containerRect.right) {
-            scrollLeft(blockSize);
+            containerRef.current!.scrollLeft -= blockSize;
             return;
         }
     };
@@ -87,21 +87,14 @@ const Carousel = (props: Props) => {
                 height,
                 maxHeight: height,
                 outline: "1px solid #000",
-                overflow: "clip",
-                display: "flex",
-                alignItems: "center",
+                overflowX: "auto",
+                scrollbarWidth: "none",
             }}
-            onClick={() => scrollLeft(16)}
+            onScroll={validate}
         >
             <div
                 ref={trackRef}
-                style={{
-                    position: "relative",
-                    width: "fit-content",
-                    height: "inherit",
-                    display: "flex",
-                    gap,
-                }}
+                style={{ width: "fit-content", display: "flex", gap }}
             >
                 {children}
 
