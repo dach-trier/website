@@ -1,40 +1,34 @@
 import { getService } from "@/drive/service";
+import { Result, Ok, Err } from "@/types/result";
+
+const FILE_ID = process.env["GOOGLE_AUTHORIZED_EDITOR_FILE_ID"];
 
 let authorizedEditors: string[] | null = null;
-const fileId = process.env["GOOGLE_AUTHORIZED_EDITOR_FILE_ID"];
 
-export async function getEditors(): Promise<string[]> {
+export async function get(): Promise<Result<string[], string>> {
     if (authorizedEditors !== null) {
-        return authorizedEditors;
+        return Ok(authorizedEditors);
     }
 
     const service = getService();
-    const res = await service.files.get({ fileId, alt: "media" });
+    const res = await service.files.get({ fileId: FILE_ID, alt: "media" });
     const status = res.status;
-    const contentType = (res.headers as any).get("content-type");
 
     if (status !== 200) {
-        throw new Error(
-            `unable to fetch authorized editors (status code ${res.status})`,
-        );
-    }
-
-    // prettier-ignore
-    if (contentType !== "text/plain" || typeof res.data !== "string") {
-        throw new Error(`unexpected file format (${contentType}/${typeof res.data})`);
+        return Err(`status code ${res.status}`);
     }
 
     authorizedEditors = (res.data as string).split("\n");
 
-    return authorizedEditors;
+    return Ok(authorizedEditors);
 }
 
-export async function setEditors(editors: string[]): Promise<void> {
+export async function set(editors: string[]): Promise<Result<void, string>> {
     const service = getService();
     const content = editors.join("\n");
 
     const res = await service.files.update({
-        fileId,
+        fileId: FILE_ID,
         media: {
             mimeType: "text/plain",
             body: content,
@@ -42,10 +36,10 @@ export async function setEditors(editors: string[]): Promise<void> {
     });
 
     if (res.status !== 200) {
-        throw new Error(
-            `unable to fetch authorized editors (status code ${res.status})`,
-        );
+        return Err(`status code ${res.status}`);
     }
 
     authorizedEditors = editors;
+
+    return Ok(undefined);
 }
