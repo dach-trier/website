@@ -1,6 +1,6 @@
 export default {
     /** List of supported locales. */
-    locales: ["en", "de", "uk"],
+    locales: ["en", "de", "uk"] as const,
 
     /** Used when no locale matches */
     default: "en",
