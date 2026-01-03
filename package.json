@@ -3,7 +3,8 @@
     "private": true,
     "workspaces": [
         "apps/*",
-        "packages/*"
+        "packages/*",
+        "configs/*"
     ],
     "devDependencies": {
         "turbo": "^2.7.2"
