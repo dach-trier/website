@@ -1,0 +1,10 @@
+{
+    "extends": "@dach/typescript/base.json",
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "dist",
+        "outDir": "dist",
+        "jsx": "react-jsx"
+    },
+    "incude": ["src"]
+}

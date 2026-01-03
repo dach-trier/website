@@ -1,0 +1,20 @@
+{
+    "name": "@dach/ui",
+    "version": "0.0.0",
+    "private": true,
+    "main": "dist/index.js",
+    "module": "dist'index.esm.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "dev": "tsc --watch",
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "@dach/typescript": "*",
+        "typescript": "^5.9.3"
+    },
+    "peerDependencies": {
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0"
+    }
+}
