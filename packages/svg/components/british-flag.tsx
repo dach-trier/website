@@ -3,10 +3,8 @@ import type { SVGProps } from "react";
 const BritishFlag = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={800}
-        height={800}
         fill="none"
-        viewBox="0 -4 28 28"
+        viewBox="0 0 28 20"
         {...props}
     >
         <g clipPath="url(#great-britain_svg__a)">
@@ -31,12 +29,6 @@ const BritishFlag = (props: SVGProps<SVGSVGElement>) => (
                     fillRule="evenodd"
                     d="m-1.282-1.916 11.949 8.06v-7.477h6.666v7.476l11.95-8.06 1.49 2.211-9.447 6.373H28v6.666h-6.674l9.448 6.373-1.492 2.21-11.949-8.06v7.477h-6.666v-7.476l-11.95 8.06-1.49-2.211 9.447-6.373H0V6.667h6.674L-2.774.294z"
                     clipRule="evenodd"
-                />
-                <path
-                    stroke="#DB1F35"
-                    strokeLinecap="round"
-                    strokeWidth={0.667}
-                    d="M18.668 6.332 31.333-2M20.013 13.698l11.354 7.652M8.006 6.31-3.837-1.67M9.29 13.605-3.837 22.31"
                 />
                 <path
                     fill="#E6273E"

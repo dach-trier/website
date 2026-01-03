@@ -4,8 +4,7 @@ const DachLogo = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         id="dach_svg__\u0428\u0430\u0440_1"
-        width={500}
-        height={400}
+        viewBox="0 0 500 400"
         data-name="\u0428\u0430\u0440 1"
         {...props}
     >
