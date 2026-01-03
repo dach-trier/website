@@ -1,6 +1,6 @@
 import React from "react";
 
-const CarouselItem = (
+const CarouselSlide = (
     props: React.ComponentPropsWithRef<"div"> & { size?: string },
 ) => {
     const { className, size, style, ...rest } = props;
@@ -13,4 +13,4 @@ const CarouselItem = (
     );
 };
 
-export default CarouselItem;
+export default CarouselSlide;
