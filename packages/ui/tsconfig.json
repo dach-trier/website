@@ -4,7 +4,8 @@
         "declaration": true,
         "declarationDir": "dist",
         "outDir": "dist",
+        "rootDir": ".",
         "jsx": "react-jsx"
     },
-    "incude": ["src"]
+    "include": ["index.ts", "src"]
 }

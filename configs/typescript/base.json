@@ -10,7 +10,7 @@
     "strict": true,
     "alwaysStrict": true,
     "module": "NodeNext",
-    "noEmit": true,
+    "noEmit": false,
 
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
